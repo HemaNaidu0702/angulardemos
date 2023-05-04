@@ -1,0 +1,16 @@
+{
+  "employee": [
+    {
+      "id": 1,
+      "firstname": "Hema",
+      "lastname": "Naidu"
+    },
+    {
+      "id": 2,
+      "firstname": "Raj",
+      "lastname": "Koothrapalli"
+    }
+  ],
+  "posts": [],
+  "courses": []
+}

@@ -1,0 +1,43 @@
+<div class="container m-4" style="width: 400px">
+  <div class="row">
+    <div class="col">
+      <form #f="ngForm">
+        <p style="color: chartreuse; background-color: black">
+          Post your thoughts
+        </p>
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input
+            type="text"
+            class="form-control"
+            id="title"
+            name="title"
+            ngModel
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="content">Content</label>
+          <textarea
+            class="form-control"
+            id="content"
+            cols="45"
+            rows="8"
+            name="content"
+            ngModel
+            required
+          ></textarea>
+        </div>
+
+        <button
+          class="btn btn-primary"
+          type="submit"
+          [disabled]="!f.valid"
+          (click)="onCreatePost(f.value, f)"
+        >
+          Send Post
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<button class="btn btn-lg btn-info" (click)="toggleShowSecret()">
+  Show secret
+</button>
+
+<button class="btn btn-lg btn-danger" (click)="onResetLogs()">
+  Reset logs
+</button>
+
+<label
+  for=""
+  style="padding: 10px"
+  *ngIf="showSecret"
+  appBetterHighlight
+  [defaultColor]="'yellow'"
+  [highlightColor]="'red'"
+>
+  This is the world's biggest secret
+</label>
+
+<p
+  *ngFor="let log of logs; let i = index"
+  [ngStyle]="{ backgroundColor: i > 4 ? 'dodgerblue' : '' }"
+  [ngClass]="{ 'white-text': i > 4 }"
+>
+  {{ log }}
+</p>

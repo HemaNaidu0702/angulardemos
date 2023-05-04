@@ -1,0 +1,36 @@
+<div class="container m-4" style="width: 400px">
+  <div class="row">
+    <div class="col">
+      <form #f="ngForm">
+        <button class="btn btn-warning mx-2" (click)="onFetchPosts()">
+          Fetch Posts
+        </button>
+
+        <button class="btn btn-danger mx-2" (click)="onDeletePosts()">
+          Delete Posts
+        </button>
+      </form>
+
+      <br />
+
+      <div class="row m-3">
+        <div class="col">
+          <p *ngIf="dbPosts.length < 1 && !isFetching">No posts available</p>
+          <ul class="list-group" *ngIf="dbPosts.length >= 1 && !isFetching">
+            <app-post
+              *ngFor="let post of dbPosts"
+              [post]="post"
+              (postDeleted)="onSinglePostDeleted($event)"
+            ></app-post>
+          </ul>
+
+          <p *ngIf="isFetching && !errorMessage">Loading...</p>
+          <div class="alert alert-danger" *ngIf="errorMessage">
+            <h5>An error occured</h5>
+            <p>{{ errorMessage }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

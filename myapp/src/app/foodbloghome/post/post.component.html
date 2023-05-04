@@ -1,0 +1,43 @@
+<li class="list-group-item">
+  <h3>{{ post.title }}</h3>
+  <p>{{ post.content }}</p>
+  <div class="row">
+    <div class="col">
+      <span
+        ><button class="btn btn-danger btn-sm" (click)="onPostDelete()">
+          Remove
+        </button></span
+      >
+    </div>
+
+    <form #loginForm="ngForm" (ngSubmit)="onPostUpdate(loginForm.value)">
+      <div class="main">
+        <div class="input-fields">
+          <div class="col">
+            <span><button class="btn btn-primary btn-sm">Update</button></span>
+          </div>
+          <input
+            name="title"
+            placeholder="Title"
+            id="title"
+            type="text"
+            class="input-field"
+            ngModel
+            required
+          />
+        </div>
+        <div class="input-fields">
+          <input
+            name="content"
+            placeholder="Content"
+            id="content"
+            type="text"
+            class="input-field"
+            ngModel
+            required
+          />
+        </div>
+      </div>
+    </form>
+  </div>
+</li>

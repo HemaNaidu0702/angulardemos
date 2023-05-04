@@ -1,0 +1,68 @@
+<!-- <p>server with id {{ serverId }} is {{ serverStatus }}</p>
+<p>The current staus is {{ getServerStatus() }}</p> -->
+
+<!-- <div class="container">
+  <div class="row">
+    <div class="col">
+      <label for="servername">ServerName</label>
+    </div>
+
+    <div class="col">
+      <input
+        type="text"
+        class="form-control"
+        id="servername"
+        (input)="onUpdateSeverName($event)"
+        placeholder="Server Name"
+      />
+    </div>
+
+    <div class="col">
+      <input
+        type="text"
+        class="form-control"
+        id="serverdescription"
+        (input)="onUpdateSeverName($event)"
+        placeholder="Server Description"
+      />
+    </div>
+
+    <div class="col">
+      <button
+        [ngClass]="getServerClass()"
+        [disabled]="serverStatus == 'offline'"
+      >
+        {{ serverName }}-{{ serverId }}
+      </button>
+      <small class="form-text text-muted">{{ serverDescription }}</small>
+    </div>
+
+    <div class="col" *ngIf="serverStatus == 'online'; else serverOffline">
+      <button
+        class="btn btn-info btn-lg"
+        (click)="onPowerButtonClick()"
+        [ngStyle]="{background-color: getServerColour()}"
+      >
+        CPU 50% Memory 40%
+      </button>
+    </div>
+
+    <ng-template #serverOffline>
+      <div class="col">
+        <button
+          class="btn-info btn-lg"
+          (click)="onPowerButtonClick()"
+          [ngStyle]="{background-color: getServerColour()}"
+        >
+          Server not running.
+        </button>
+      </div>
+    </ng-template>
+
+    <div class="col">
+      <button class="btn btn-primary btn-sm" (click)="onPowerButtonClick()">
+        {{ getPowerButtonLabel() }}
+      </button>
+    </div>
+  </div>
+</div> -->
